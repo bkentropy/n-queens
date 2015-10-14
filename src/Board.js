@@ -79,11 +79,27 @@
     //
     // test if a specific row on this board contains a conflict
     hasRowConflictAt: function(rowIndex) {
-      return false; // fixme
+      var result = false;
+
+      // input is rowIndex | output is boolean
+
+      // iterate over the array at rowIndex
+        // check row for any row repitition
+          // if there are any repeats
+            // return true (result = true)
+
+
+      return result; // fixme
     },
 
     // test if any rows on this board contain conflicts
     hasAnyRowConflicts: function() {
+      // input will be the board matrix | output will be boolean
+
+      // execute hasRowConflictAt on each row
+        // if any row has a conflict 
+          // return true
+
       return false; // fixme
     },
 
@@ -94,11 +110,23 @@
     //
     // test if a specific column on this board contains a conflict
     hasColConflictAt: function(colIndex) {
+      // iterate over each row in the matrix 
+        // check the i'th index
+          // if any i'th index repeats
+            // then return true
+
+      // return boolean
+
       return false; // fixme
     },
 
     // test if any columns on this board contain conflicts
     hasAnyColConflicts: function() {
+      // exectue hasColConflictAt on each i'th index
+
+        // reduce/_.some result array into one value
+          // return true if there are ANY conflicts
+
       return false; // fixme
     },
 
@@ -109,11 +137,22 @@
     //
     // test if a specific major diagonal on this board contains a conflict
     hasMajorDiagonalConflictAt: function(majorDiagonalColumnIndexAtFirstRow) {
+      // i's are rows
+      // j's are columns 
+
+      // check starting point and check MAJ diagonal
+        // +1 to i, +1 to j 
+          // if there are any repeats
+            // return true
+
       return false; // fixme
     },
 
     // test if any major diagonals on this board contain conflicts
     hasAnyMajorDiagonalConflicts: function() {
+      // run hasMajorDiagonalConflictAt on each row Index.
+
+
       return false; // fixme
     },
 
@@ -124,11 +163,18 @@
     //
     // test if a specific minor diagonal on this board contains a conflict
     hasMinorDiagonalConflictAt: function(minorDiagonalColumnIndexAtFirstRow) {
+      // check starting point and check MIN diagonal
+        // -1 from i, -1 from j
+          // if repeats
+            // return true (conflict)
+
       return false; // fixme
     },
 
     // test if any minor diagonals on this board contain conflicts
     hasAnyMinorDiagonalConflicts: function() {
+      // run hasMinorDiagonalConflictAt on each row index
+
       return false; // fixme
     }
 
