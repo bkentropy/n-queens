@@ -79,17 +79,30 @@
     //
     // test if a specific row on this board contains a conflict
     hasRowConflictAt: function(rowIndex) {
-      var result = false;
 
+      var matrix = this.rows(); // not sure
+      console.log(matrix);
       // input is rowIndex | output is boolean
 
       // iterate over the array at rowIndex
-        // check row for any row repitition
-          // if there are any repeats
-            // return true (result = true)
+      // return _.reduce(rowIndex, function(last, current) {
+      //     // if there are any repeats
+      //   if ( last === 1 && current === 1) {
+      //       // return true (result = true)
+      //     return true;
+      //   } else {
+      //     return false;
+      //   }
+      // }, 0);
+      var count = _.reduce(matrix[rowIndex], function(last, current) {
+        return last + current;
+      }, 0);
+      if (count > 1) {
+        return true;
+      } else {
+        return false;
+      }
 
-
-      return result; // fixme
     },
 
     // test if any rows on this board contain conflicts
@@ -97,10 +110,16 @@
       // input will be the board matrix | output will be boolean
 
       // execute hasRowConflictAt on each row
+      var results = false;
+      for (var i = 0; i < this.rows().length; i++) {
+        if (this.hasRowConflictAt(i)) {
+          results = true;
+        } 
         // if any row has a conflict 
           // return true
+      }
 
-      return false; // fixme
+      return results; // fixme
     },
 
 
