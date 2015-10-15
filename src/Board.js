@@ -81,7 +81,7 @@
     hasRowConflictAt: function(rowIndex) {
 
       var matrix = this.rows(); // not sure
-      console.log(matrix);
+      // console.log(matrix);
       // input is rowIndex | output is boolean
 
       // iterate over the array at rowIndex
