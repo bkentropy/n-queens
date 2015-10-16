@@ -177,14 +177,23 @@
       // j's are columns 
       var matrix = this.rows();
 
+      // take out i loop to fix 
+
       // check starting point and check MAJ diagonal
         // +1 to i, +1 to j 
       var count = 0;
-      for (var i = 0; i < matrix.length; i++){
-        if (matrix[i][columnIndex + i] === 1) {
-          count++;
+      for ( var i = 0; i < matrix.length - 1; i++ ) {
+        for (var k = 0; k < matrix.length - 2; k++){
+          if (matrix[i + k][columnIndex + k] === 1) {
+            count++;
+          }
         }
       }
+      
+      // for (var i = 1; i < matrix.length; i++){
+      //   if ( matrix[i])
+      // }
+      
       // for ( var i = 0; i < matrix.length; i++) {
       //   _.reduce(matrix, function(last, current) {
       //     // if there are any repeats
@@ -228,12 +237,17 @@
       var matrix = this.rows();
       var count = 0;
 
+      // Take out i loop to fix
+
         // -1 from i, -1 from j
-        for ( var i = 0; i < matrix.length; i++ ) {
-          if ( matrix[i][colIndex - i] === 1 ) {
-            count++;
+        for ( var i = 0; i < matrix.length - 1; i++ ) {
+          for ( var k = 0; k < matrix.length - 2; k++ ) {
+            if ( matrix[i + k][colIndex - k] === 1 ) {
+              count++;
+            }
           }
         }
+        
 
           // if repeats
           if ( count > 1) {
